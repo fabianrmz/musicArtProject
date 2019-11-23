@@ -16,3 +16,9 @@ function playNote(frequency, duration) {
   }
   
 
+  function playMelody() {
+    if (notes.length > 0) {
+      note = notes.pop();
+      playNote(note[0], 1000 * 256 / (note[1] * tempo));
+    }
+  }
