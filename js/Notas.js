@@ -1,13 +1,17 @@
-function ReproducirNota(frecuencia) {
-    var context = new AudioContext();
-    var oscillator = context.createOscillator();
-    tiempo = context.createGain();
-    oscillator.connect(tiempo);
-    oscillator.type = "sawtooth";
-    oscillator.frequency.value = frecuencia;
-    tiempo.connect(context.destination);
-    oscillator.start(0);
-    tiempo.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 1.5)
-
-}
+function playNote(frequency, duration) {
+    // create Oscillator node
+    var oscillator = audioCtx.createOscillator();
+  
+    oscillator.type = 'square';
+    oscillator.frequency.value = frequency; // value in hertz
+    oscillator.connect(audioCtx.destination);
+    oscillator.start();
+  
+    setTimeout(
+      function() {
+        oscillator.stop();
+        playMelody();
+      }, duration);
+  }
+  
 
