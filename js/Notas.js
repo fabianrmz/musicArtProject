@@ -1,3 +1,4 @@
+var audioCtx = new(window.AudioContext || window.webkitAudioContext)();
 function playNote(frequency, duration) {
     // create Oscillator node
     var oscillator = audioCtx.createOscillator();
