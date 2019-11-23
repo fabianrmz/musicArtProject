@@ -1,0 +1,10 @@
+.key {
+    height: 300px !important ;
+}
+.semic {
+    height: 150px !important ;
+    position: absolute !important;
+    left: 12.5% !important; 
+    top: 24px !important;
+}
+
