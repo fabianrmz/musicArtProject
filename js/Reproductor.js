@@ -17,8 +17,11 @@ function pauseAudio() {
   cancion.pause(); 
 } 
 function startImprovise(){
-  //start();
-  playTone(tableNotes[0][0],"sawtooth", 1);
+
+
+  playTone(82.41,"triangle", 1);
+  start();
+  //playTone(tableNotes[0][0],"sawtooth", 1);
 }
 
 function sleep(milliseconds) {
@@ -41,7 +44,7 @@ function start(){
   var count=0;
   var i;
   var countChord=0;
-  for(i=0;i<99;i++){
+  for(i=0;i<300;i++){
     playTone(tableNotes[x][y],"sawtooth", .1);
     
     
@@ -90,4 +93,8 @@ function getRndInteger(min, max) {
 function stop(){
   songOn=false;
  
+}
+
+function playNote(frecuency){
+  playTone(frecuency,"sawtooth", .75);
 }
