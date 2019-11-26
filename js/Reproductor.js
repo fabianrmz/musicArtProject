@@ -74,6 +74,10 @@ function start(){
      
       count=0;
       
+    }else if(count==0){
+
+      playSound("buzzer")
+
     }
 
 
