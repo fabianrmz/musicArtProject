@@ -44,8 +44,24 @@ function start(){
   var count=0;
   var i;
   var countChord=0;
-  for(i=0;i<300;i++){
+  for(i=0;i<150;i++){
+    
     playTone(tableNotes[x][y],"sawtooth", .1);
+    
+    
+   console.log(tableNotes[x][y])
+   if(x>0 && x<5 ){
+    x+=getRndInteger(-1, 2)
+   }else{
+    x=Math.floor(Math.random() * 6);
+   }
+
+   if(y>0 && y<13){
+    y+=getRndInteger(-1, 2)
+   }else{
+    y= Math.floor(Math.random() * 14);
+   }
+   playTone(tableNotes[x][y],"sawtooth", .6);
     
     
    console.log(tableNotes[x][y])
@@ -68,13 +84,13 @@ function start(){
     
     if(count==3){
 
-      playTone(tableNotes[x][y],"triangle", .5);
+      playTone(tableNotes[x][y],"triangle", .4);
       x=Math.floor(Math.random() * 6);
       y= Math.floor(Math.random() * 14);
      
       count=0;
       
-    }else if(count==0){
+    }else if(count==1){
 
       playSound("buzzer")
 
